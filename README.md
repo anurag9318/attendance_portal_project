@@ -50,7 +50,6 @@ npm run seed
 ```
 
 Default demo accounts:
-- Admin: `admin` / `Admin@123`
 - Student: `st001` / `Student@123`
 
 **Change/remove these demo credentials before real classroom use.**
