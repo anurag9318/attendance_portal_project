@@ -60,7 +60,7 @@
         async function mark(id, status) { try { await api("/api/attendance/mark", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ studentId: id, status }) }); toast("Updated"); await load() } catch (e) { toast(e.message, true) } }
         async function bulk(status) { if (!confirm(`Mark all students ${status}?`)) return; try { await api("/api/attendance/mark-all", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status }) }); toast("Updated"); await load() } catch (e) { toast(e.message, true) } }
         async function resetDay() { if (!confirm("Reset TODAY only? All attendance marked today will be deleted and student attendance will reopen.")) return; try { await api("/api/attendance/reset", { method: "POST" }); toast("Today reset and reopened."); await load() } catch (e) { toast(e.message, true) } }
-        async function holidayDay() { const reason = prompt("Holiday reason (optional):", "Holiday"); if (reason === null) return; try { await api("/api/attendance/holiday", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reason }) }); toast("Today declared a holiday."); load() } catch (e) { toast(e.message, true) } } await load();
+        async function holidayDay() { const reason = prompt("Holiday reason (optional):", "Holiday"); if (reason === null) return; try { await api("/api/attendance/holiday", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reason }) }); toast("Today declared a holiday."); load() } catch (e) { toast(e.message, true) } }  load();
     </script>
 </body>
 
